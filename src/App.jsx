@@ -105,13 +105,13 @@ const Hero = () => {
               {/* Mockup Body */}
               <div className="p-6 h-[400px] flex flex-col justify-end space-y-4 bg-gradient-to-b from-transparent to-brand/5">
                 <div className="bg-brand/10 border border-brand/20 text-blue-200 p-4 rounded-xl max-w-[80%] rounded-tl-sm self-start text-sm">
-                  Olá! Como posso ajudar a otimizar a sua empresa hoje?
+                  Olá! Bem-vindo à Kaps Habitat. Como posso ajudar com o seu investimento imobiliário em Cabo Verde?
                 </div>
                 <div className="bg-white/5 border border-white/10 text-gray-300 p-4 rounded-xl max-w-[80%] rounded-tr-sm self-end text-sm">
-                  Gostaria de saber como integrar IA no meu serviço de apoio ao cliente.
+                  Procuro uma moradia na ilha do Sal.
                 </div>
                 <div className="bg-brand/10 border border-brand/20 text-blue-200 p-4 rounded-xl max-w-[80%] rounded-tl-sm self-start text-sm">
-                  Ótimo! O SmartBizChat reduz o tempo de resposta em 80%. Posso mostrar-lhe uma demonstração com os dados da sua empresa.
+                  Excelente escolha! Temos a Ref. SAL-010 na Murdeira: T3 duplex com vista mar por 185.000€. Gostaria de agendar uma visita?
                 </div>
               </div>
             </div>
@@ -160,9 +160,9 @@ const About = () => {
 
 const Showcase = () => {
   const features = [
-    { icon: <Zap className="w-5 h-5 text-yellow-400" />, title: "Respostas em 3 segundos", desc: "Velocidade que impressiona e converte." },
-    { icon: <Clock className="w-5 h-5 text-blue-400" />, title: "Atendimento Automático 24/7", desc: "O seu negócio nunca fecha as portas." },
-    { icon: <ShieldCheck className="w-5 h-5 text-green-400" />, title: "Treinado com os seus dados", desc: "Responde exatamente como a sua equipa." },
+    { icon: <Bot className="w-5 h-5 text-brand-light" />, title: "IA Treinada Customizada", desc: "Alimentada com os seus documentos, catálogos e histórico." },
+    { icon: <Clock className="w-5 h-5 text-blue-400" />, title: "Disponibilidade 24/7", desc: "Venda imóveis ou esclareça dúvidas enquanto dorme." },
+    { icon: <Zap className="w-5 h-5 text-yellow-400" />, title: "Velocidade Instantânea", desc: "Respostas precisas em menos de 3 segundos." },
   ];
 
   return (
