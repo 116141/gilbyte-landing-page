@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Bot, Zap, Clock, ShieldCheck, Mail, ChevronRight, Menu } from 'lucide-react';
+import { ArrowRight, Bot, Zap, Clock, ShieldCheck, Mail, ChevronRight, Menu, MessageSquare } from 'lucide-react';
+import ChatWidget from './components/ChatWidget';
 
 const GilbyteLogo = ({ className }) => (
   <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
@@ -276,6 +277,7 @@ export default function App() {
         <Showcase />
       </main>
       <Footer />
+      <ChatWidget />
     </div>
   );
 }
