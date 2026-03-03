@@ -149,7 +149,7 @@ const About = () => {
               O Nosso Mundo <span className="text-brand-light">•</span> Sobre Nós
             </h2>
             <p className="text-xl md:text-2xl text-gray-400 leading-relaxed font-light">
-              Na <span className="text-white font-medium">Gilbyte Solutions</span>, não criamos apenas linhas de código. Desenvolvemos ferramentas práticas e inovadoras que resolvem problemas reais. O nosso foco é a excelência tecnológica combinada com resultados palpáveis para o seu negócio.
+              Na <span className="text-white font-medium">Gilbyte Solutions</span>, sediada em Cabo Verde, somos especialistas em potenciar o crescimento de empresas através de tecnologia de ponta. O nosso foco é a criação de <span className="text-brand-light">Ecossistemas Inteligentes</span> que automatizam tarefas, otimizam o atendimento e permitem que os nossos clientes se foquem no que realmente importa: escalar o seu negócio.
             </p>
           </div>
         </div>
@@ -174,7 +174,7 @@ const Showcase = () => {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">SmartBizChat</h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            O futuro do apoio ao cliente chegou. Um assistente virtual inteligente integrado diretamente nos seus canais.
+            Mais do que um chatbot, é um membro inteligente da sua equipa. O SmartBizChat é treinado com os <span className="text-white">documentos e procedimentos da sua empresa</span> para oferecer uma experiência humana e assertiva.
           </p>
         </div>
 
