@@ -32,6 +32,10 @@ const ChatWidget = () => {
         try {
             const response = await axios.post(`${BACKEND_URL}/chat`, {
                 message: userMsg
+            }, {
+                headers: {
+                    'X-Company-Slug': 'gilbyte'
+                }
             });
             setMessages(prev => [...prev, { role: 'assistant', text: response.data.reply }]);
         } catch (error) {
@@ -86,8 +90,8 @@ const ChatWidget = () => {
                                             {msg.role === 'user' ? <User className="w-4 h-4 text-white" /> : <Bot className="w-4 h-4 text-brand-light" />}
                                         </div>
                                         <div className={`p-4 rounded-2xl text-sm leading-relaxed ${msg.role === 'user'
-                                                ? 'bg-brand text-white rounded-tr-none'
-                                                : 'bg-white/5 border border-white/10 text-gray-200 rounded-tl-none'
+                                            ? 'bg-brand text-white rounded-tr-none'
+                                            : 'bg-white/5 border border-white/10 text-gray-200 rounded-tl-none'
                                             }`}>
                                             {msg.text}
                                         </div>
