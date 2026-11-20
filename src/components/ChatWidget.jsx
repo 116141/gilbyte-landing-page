@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { MessageSquare, Send, X, Bot, User, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -89,11 +91,47 @@ const ChatWidget = () => {
                                         <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${msg.role === 'user' ? 'bg-brand' : 'bg-white/5 border border-white/10'}`}>
                                             {msg.role === 'user' ? <User className="w-4 h-4 text-white" /> : <Bot className="w-4 h-4 text-brand-light" />}
                                         </div>
-                                        <div className={`p-4 rounded-2xl text-sm leading-relaxed ${msg.role === 'user'
-                                            ? 'bg-brand text-white rounded-tr-none'
+                                        <div className={`p-4 rounded-2xl text-sm leading-relaxed overflow-hidden ${msg.role === 'user'
+                                            ? 'bg-brand text-white rounded-tr-none whitespace-pre-wrap'
                                             : 'bg-white/5 border border-white/10 text-gray-200 rounded-tl-none'
                                             }`}>
-                                            {msg.text}
+                                            {msg.role === 'user' ? (
+                                                msg.text
+                                            ) : (
+                                                <ReactMarkdown
+                                                    remarkPlugins={[remarkGfm]}
+                                                    components={{
+                                                        h1: ({ children }) => <h3 className="text-sm font-bold text-white mt-2 mb-1 first:mt-0">{children}</h3>,
+                                                        h2: ({ children }) => <h3 className="text-sm font-bold text-white mt-2 mb-1 first:mt-0">{children}</h3>,
+                                                        h3: ({ children }) => <h4 className="text-xs font-semibold uppercase tracking-wide text-brand-light mt-2 mb-1 first:mt-0">{children}</h4>,
+                                                        p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+                                                        ul: ({ children }) => <ul className="list-disc pl-4 mb-2 space-y-1 last:mb-0">{children}</ul>,
+                                                        ol: ({ children }) => <ol className="list-decimal pl-4 mb-2 space-y-1 last:mb-0">{children}</ol>,
+                                                        li: ({ children }) => <li>{children}</li>,
+                                                        strong: ({ children }) => <strong className="font-semibold text-white">{children}</strong>,
+                                                        a: ({ href, children }) => (
+                                                            <a
+                                                                href={href}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="text-brand-light underline hover:text-white break-all"
+                                                            >
+                                                                {children}
+                                                            </a>
+                                                        ),
+                                                        table: ({ children }) => (
+                                                            <div className="overflow-x-auto my-2">
+                                                                <table className="w-full text-xs border-collapse border border-white/15">{children}</table>
+                                                            </div>
+                                                        ),
+                                                        th: ({ children }) => <th className="border border-white/15 px-2 py-1 text-left bg-white/10 text-white font-semibold">{children}</th>,
+                                                        td: ({ children }) => <td className="border border-white/15 px-2 py-1">{children}</td>,
+                                                        blockquote: ({ children }) => <blockquote className="border-l-2 border-brand-light pl-3 my-2 text-gray-300 italic">{children}</blockquote>,
+                                                    }}
+                                                >
+                                                    {msg.text}
+                                                </ReactMarkdown>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
