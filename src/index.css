@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -15,5 +19,65 @@
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+  }
+}
+
+@keyframes subtleEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.enter-subtle {
+  animation: subtleEnter 280ms var(--ease-out-cubic) both;
+}
+
+.enter-subtle-delay {
+  animation: subtleEnter 320ms var(--ease-out-cubic) 70ms both;
+}
+
+.tactile-btn {
+  transition:
+    transform 150ms var(--ease-out-cubic),
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
+}
+
+.tactile-btn:active {
+  transform: scale(0.975);
+}
+
+.tactile-card {
+  transition:
+    transform 180ms var(--ease-out-cubic),
+    border-color 160ms ease,
+    box-shadow 180ms var(--ease-out-cubic);
+}
+
+.tactile-card:hover {
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .enter-subtle,
+  .enter-subtle-delay {
+    animation: none;
+  }
+  .tactile-btn,
+  .tactile-card {
+    transition: none;
+  }
+  .tactile-btn:active,
+  .tactile-card:hover {
+    transform: none;
   }
 }

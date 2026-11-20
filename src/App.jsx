@@ -109,7 +109,7 @@ const Navbar = () => {
 const Hero = () => (
   <section className="bg-white border-b border-slate-200 py-16 md:py-24">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-center">
-      <div className="lg:col-span-7 space-y-6">
+      <div className="lg:col-span-7 space-y-6 enter-subtle">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-700">
           GilByte Solutions • Software &amp; Micro-SaaS
         </span>
@@ -128,7 +128,7 @@ const Hero = () => (
             href="https://bookgrid-iota.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-[#0F172A] text-white text-sm font-semibold hover:bg-slate-800 transition-colors"
+            className="tactile-btn inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-[#0F172A] text-white text-sm font-semibold hover:bg-slate-800"
           >
             Conhecer o BookGrid
             <ArrowRight className="w-4 h-4" />
@@ -137,7 +137,7 @@ const Hero = () => (
             href="https://wa.me/2389172385"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-slate-200 bg-white text-sm font-semibold text-[#0F172A] hover:bg-slate-50 transition-colors"
+            className="tactile-btn inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-slate-200 bg-white text-sm font-semibold text-[#0F172A] hover:bg-slate-50"
           >
             <MessageCircle className="w-4 h-4 text-teal-600" />
             WhatsApp: +238 917 2385
@@ -145,7 +145,7 @@ const Hero = () => (
         </div>
       </div>
 
-      <div className="lg:col-span-5">
+      <div className="lg:col-span-5 enter-subtle-delay">
         <div className="rounded-2xl bg-[#F8FAFC] border border-slate-200 p-6 space-y-4 shadow-sm">
           <div className="flex items-center justify-between border-b border-slate-200 pb-3">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
@@ -160,7 +160,7 @@ const Hero = () => (
             href="https://bookgrid-iota.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="block rounded-xl bg-white border border-slate-200 p-4 hover:border-slate-300 transition"
+            className="tactile-card block rounded-xl bg-white border border-slate-200 p-4 hover:border-slate-300 hover:shadow-sm"
           >
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
@@ -180,7 +180,7 @@ const Hero = () => (
             href="https://smart-biz-chat.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="block rounded-xl bg-white border border-slate-200 p-4 hover:border-slate-300 transition"
+            className="tactile-card block rounded-xl bg-white border border-slate-200 p-4 hover:border-slate-300 hover:shadow-sm"
           >
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
