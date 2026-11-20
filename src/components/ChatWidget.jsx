@@ -12,7 +12,7 @@ const ChatWidget = () => {
     const [isLoading, setIsLoading] = useState(false);
     const scrollRef = useRef(null);
 
-    const BACKEND_URL = 'https://smartbizchat.onrender.com';
+    const BACKEND_URL = 'https://smartbizchat-api.onrender.com';
 
     useEffect(() => {
         if (scrollRef.current) {
