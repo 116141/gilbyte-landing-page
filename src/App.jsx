@@ -25,6 +25,33 @@ const GilbyteMark = ({ className = 'w-8 h-8' }) => (
   </svg>
 );
 
+const BookGridMark = ({ className = 'w-6 h-6' }) => (
+  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+    <rect x="3" y="3" width="11.5" height="11.5" rx="3" fill="#0F172A" />
+    <rect x="17.5" y="3" width="11.5" height="11.5" rx="3" fill="#0F172A" />
+    <rect x="3" y="17.5" width="11.5" height="11.5" rx="3" fill="#0F172A" />
+    <rect x="17.5" y="17.5" width="11.5" height="11.5" rx="3" fill="#0D9488" />
+  </svg>
+);
+
+const SmartBizChatMark = ({ className = 'w-6 h-6' }) => (
+  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+    <path d="M4 5.5H28V22.5H13.5L7.5 27.5V22.5H4V5.5Z" stroke="#0F172A" strokeWidth="2.6" strokeLinejoin="round" />
+    <path d="M21 5.5H28V12.5" stroke="#2563EB" strokeWidth="2.8" strokeLinecap="square" />
+    <rect x="9.5" y="10.5" width="13" height="2.4" rx="1" fill="#2563EB" />
+    <rect x="9.5" y="15.5" width="9.5" height="2.4" rx="1" fill="#0F172A" />
+  </svg>
+);
+
+const IntakeDockMark = ({ className = 'w-6 h-6' }) => (
+  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+    <rect width="32" height="32" rx="8" fill="#0F172A" />
+    <path d="M9 10.5C9 9.67 9.67 9 10.5 9H17.5L23 14.5V21.5C23 22.33 22.33 23 21.5 23H10.5C9.67 23 9 22.33 9 21.5V10.5Z" stroke="#FFFFFF" strokeWidth="2" strokeLinejoin="round" />
+    <path d="M17 9V15H23" stroke="#14B8A6" strokeWidth="2" strokeLinejoin="round" />
+    <path d="M13 18L15 20L19.5 15.5" stroke="#14B8A6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -165,8 +192,8 @@ const Hero = () => (
           >
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-lg bg-slate-100 text-[#0F172A]">
-                  <CalendarCheck className="w-5 h-5" strokeWidth={1.75} />
+                <div className="p-2 rounded-lg bg-slate-50 border border-slate-200">
+                  <BookGridMark className="w-6 h-6" />
                 </div>
                 <div>
                   <div className="text-sm font-bold text-[#0F172A]">BookGrid</div>
@@ -185,8 +212,8 @@ const Hero = () => (
           >
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-lg bg-slate-100 text-[#0F172A]">
-                  <Bot className="w-5 h-5" strokeWidth={1.75} />
+                <div className="p-2 rounded-lg bg-slate-50 border border-slate-200">
+                  <SmartBizChatMark className="w-6 h-6" />
                 </div>
                 <div>
                   <div className="text-sm font-bold text-[#0F172A]">SmartBizChat</div>
@@ -205,8 +232,8 @@ const Hero = () => (
           >
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-lg bg-slate-100 text-[#0F172A]">
-                  <FileCheck2 className="w-5 h-5" strokeWidth={1.75} />
+                <div className="p-2 rounded-lg bg-slate-50 border border-slate-200">
+                  <IntakeDockMark className="w-6 h-6" />
                 </div>
                 <div>
                   <div className="text-sm font-bold text-[#0F172A]">IntakeDock</div>
@@ -256,8 +283,8 @@ const ProductsSection = () => (
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl bg-slate-100 text-[#0F172A]">
-                <CalendarCheck className="w-5 h-5" strokeWidth={1.75} />
+              <div className="p-2 rounded-xl bg-slate-50 border border-slate-200">
+                <BookGridMark className="w-7 h-7" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-[#0F172A]">BookGrid</h3>
@@ -318,8 +345,8 @@ const ProductsSection = () => (
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl bg-slate-100 text-[#0F172A]">
-                <Bot className="w-5 h-5" strokeWidth={1.75} />
+              <div className="p-2 rounded-xl bg-slate-50 border border-slate-200">
+                <SmartBizChatMark className="w-7 h-7" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-[#0F172A]">SmartBizChat</h3>
@@ -380,8 +407,8 @@ const ProductsSection = () => (
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl bg-slate-100 text-[#0F172A]">
-                <FileCheck2 className="w-5 h-5" strokeWidth={1.75} />
+              <div className="p-2 rounded-xl bg-slate-50 border border-slate-200">
+                <IntakeDockMark className="w-7 h-7" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-[#0F172A]">IntakeDock</h3>
