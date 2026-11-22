@@ -216,19 +216,19 @@ const Navbar = () => {
 };
 
 const Hero = () => (
-  <section className="relative overflow-hidden bg-gradient-to-b from-[#F8F7FC] via-white to-white border-b border-[#EAE6F5] py-16 md:py-24">
+  <section className="relative overflow-hidden bg-gradient-to-b from-[#F7F5FF] via-[#F7F5FF]/70 to-white border-b border-[#EAE6F5] py-16 md:py-24">
     <div
-      className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[780px] h-[340px] rounded-full opacity-20 blur-3xl"
+      className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[780px] h-[340px] rounded-full opacity-25 blur-3xl"
       style={{ background: 'radial-gradient(circle, #6D4AFF 0%, transparent 70%)' }}
     />
     <div className="relative max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-center">
       <div className="lg:col-span-7 space-y-6 enter-subtle">
-        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFEAFF] border border-[#DDD3FF] text-xs font-semibold text-[#5B38E8]">
+        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E2DBFF] border border-[#DDD3FF] text-xs font-semibold text-[#5B38E8]">
           <Lock className="w-3.5 h-3.5" />
           GilByte Suite • Privado por concepção
         </span>
 
-        <h1 className="text-[40px] sm:text-[50px] md:text-[56px] font-bold tracking-[-0.025em] text-[#1B1340] leading-[1.08]">
+        <h1 className="font-proton-serif text-[40px] sm:text-[52px] md:text-[60px] text-[#372580] leading-[1.06]">
           Software prático e seguro para equipas modernas.
         </h1>
 
@@ -242,7 +242,7 @@ const Hero = () => (
             href="https://bookgrid-iota.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="tactile-btn inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#6D4AFF] text-white text-sm font-semibold hover:bg-[#5B38E8] shadow-sm"
+            className="tactile-btn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#6D4AFF] text-white text-base font-semibold hover:bg-[#4A2DC5] shadow-sm"
           >
             Começar com o BookGrid
             <ArrowRight className="w-4 h-4" />
@@ -251,9 +251,9 @@ const Hero = () => (
             href="https://wa.me/2389172385"
             target="_blank"
             rel="noopener noreferrer"
-            className="tactile-btn inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-[#EAE6F5] bg-white text-sm font-semibold text-[#1B1340] hover:border-[#6D4AFF]/40 hover:bg-[#F8F7FC]"
+            className="tactile-btn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-transparent text-base font-semibold text-[#6D4AFF] shadow-[inset_0_0_0_2px_#6D4AFF] hover:bg-[#4A2DC5] hover:text-white"
           >
-            <MessageCircle className="w-4 h-4 text-[#6D4AFF]" />
+            <MessageCircle className="w-4 h-4" />
             WhatsApp: +238 917 2385
           </a>
         </div>

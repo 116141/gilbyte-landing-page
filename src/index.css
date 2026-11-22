@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,15 +6,21 @@
 
 :root {
   --gb-accent: #6d4aff;
-  --gb-accent-hover: #5b38e8;
-  --gb-accent-soft: #efeaff;
+  --gb-accent-hover: #4a2dc5;
+  --gb-accent-soft: #e2dbff;
   --gb-dark: #1b1340;
+  --gb-heading: #372580;
   --gb-dark-elevated: #261c54;
-  --gb-surface: #f8f7fc;
+  --gb-surface: #f7f5ff;
   --gb-border: #eae6f5;
   --gb-text: #0c0c14;
   --gb-muted: #5c5873;
   --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.font-proton-serif {
+  font-family: 'Newsreader', Georgia, Cambria, 'Times New Roman', serif;
+  font-weight: 400;
 }
 
 @layer base {
