@@ -5,6 +5,15 @@
 @tailwind utilities;
 
 :root {
+  --gb-accent: #6d4aff;
+  --gb-accent-hover: #5b38e8;
+  --gb-accent-soft: #efeaff;
+  --gb-dark: #1b1340;
+  --gb-dark-elevated: #261c54;
+  --gb-surface: #f8f7fc;
+  --gb-border: #eae6f5;
+  --gb-text: #0c0c14;
+  --gb-muted: #5c5873;
   --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -15,9 +24,11 @@
 
   body {
     background-color: #ffffff;
-    color: #0f172a;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--gb-text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
 }
@@ -46,6 +57,7 @@
     transform 150ms var(--ease-out-cubic),
     background-color 150ms ease,
     border-color 150ms ease,
+    box-shadow 150ms ease,
     color 150ms ease;
 }
 
