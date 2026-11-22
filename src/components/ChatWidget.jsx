@@ -22,11 +22,16 @@ const ChatWidget = () => {
         }
     }, [messages]);
 
-    const handleSendMessage = async (e) => {
-        e.preventDefault();
-        if (!input.trim() || isLoading) return;
+    const QUICK_QUESTIONS = [
+        'Quais são os vossos produtos e preços?',
+        'Como funciona o teste grátis de 14 dias?',
+        'Qual é o vosso contacto de WhatsApp?',
+    ];
 
-        const userMsg = input;
+    const sendText = async (text) => {
+        if (!text.trim() || isLoading) return;
+
+        const userMsg = text.trim();
         setInput('');
         setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
         setIsLoading(true);
@@ -48,6 +53,11 @@ const ChatWidget = () => {
         }
     };
 
+    const handleSendMessage = async (e) => {
+        e.preventDefault();
+        await sendText(input);
+    };
+
     return (
         <div className="fixed bottom-6 right-6 z-[100]">
             <AnimatePresence>
@@ -56,13 +66,13 @@ const ChatWidget = () => {
                         initial={{ opacity: 0, y: 20, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 20, scale: 0.95 }}
-                        className="mb-4 w-[350px] sm:w-[400px] h-[550px] glass-panel border border-white/10 shadow-glow flex flex-col overflow-hidden bg-background/95 backdrop-blur-2xl rounded-3xl"
+                        className="mb-4 w-[350px] sm:w-[400px] h-[560px] border border-white/15 shadow-2xl flex flex-col overflow-hidden bg-[#1B1340] backdrop-blur-2xl rounded-3xl"
                     >
                         {/* Header */}
-                        <div className="p-5 border-b border-white/10 bg-brand/10 flex justify-between items-center">
+                        <div className="p-5 border-b border-white/10 bg-[#261C54] flex justify-between items-center">
                             <div className="flex items-center gap-3">
-                                <div className="bg-brand/20 p-2 rounded-lg">
-                                    <Bot className="w-5 h-5 text-brand-light" />
+                                <div className="bg-[#6D4AFF]/25 p-2 rounded-lg">
+                                    <Bot className="w-5 h-5 text-[#C4B5FD]" />
                                 </div>
                                 <div>
                                     <h3 className="text-white font-bold text-sm">SmartBiz Assistant</h3>
@@ -150,26 +160,41 @@ const ChatWidget = () => {
                             )}
                         </div>
 
+                        {/* Suggested Quick Questions */}
+                        <div className="px-4 pb-2.5 flex flex-wrap gap-1.5">
+                            {QUICK_QUESTIONS.map((q) => (
+                                <button
+                                    key={q}
+                                    type="button"
+                                    disabled={isLoading}
+                                    onClick={() => void sendText(q)}
+                                    className="px-2.5 py-1 rounded-full bg-[#261C54] hover:bg-[#6D4AFF] text-[11px] font-medium text-[#E2DBFF] hover:text-white border border-white/10 transition disabled:opacity-50"
+                                >
+                                    {q}
+                                </button>
+                            ))}
+                        </div>
+
                         {/* Input */}
-                        <form onSubmit={handleSendMessage} className="p-5 border-t border-white/10 bg-white/5">
+                        <form onSubmit={handleSendMessage} className="p-4 border-t border-white/10 bg-white/5">
                             <div className="relative">
                                 <input
                                     type="text"
                                     value={input}
                                     onChange={(e) => setInput(e.target.value)}
                                     placeholder="Como podemos ajudar?"
-                                    className="w-full bg-background/50 border border-white/10 rounded-xl py-3 pl-4 pr-12 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand/50 transition-colors"
+                                    className="w-full bg-[#130C2E] border border-white/15 rounded-xl py-3 pl-4 pr-12 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-[#6D4AFF] transition-colors"
                                 />
                                 <button
                                     type="submit"
                                     disabled={!input.trim() || isLoading}
-                                    className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-brand hover:bg-brand-hover disabled:opacity-50 disabled:hover:bg-brand text-white rounded-lg transition-all"
+                                    className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-[#6D4AFF] hover:bg-[#5B38E8] disabled:opacity-50 text-white rounded-lg transition-all"
                                 >
                                     <Send className="w-4 h-4" />
                                 </button>
                             </div>
-                            <p className="text-[10px] text-gray-500 mt-3 text-center">
-                                Desenvolvido por <span className="text-brand-light">Gilbyte Solutions</span>
+                            <p className="text-[10px] text-gray-400 mt-2.5 text-center">
+                                Desenvolvido por <span className="text-[#C4B5FD]">Gilbyte Solutions</span>
                             </p>
                         </form>
                     </motion.div>
@@ -180,7 +205,7 @@ const ChatWidget = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-14 h-14 bg-brand rounded-full shadow-glow flex items-center justify-center text-white relative group border border-white/20"
+                className="w-14 h-14 bg-[#6D4AFF] hover:bg-[#4A2DC5] rounded-full shadow-xl flex items-center justify-center text-white relative group border border-white/20 transition-colors"
             >
                 <AnimatePresence mode="wait">
                     {isOpen ? (
